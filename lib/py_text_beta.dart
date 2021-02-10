@@ -69,6 +69,16 @@ class HighlightTheme {
   static HighlightTheme defaultDarkTheme(){
     return HighlightTheme();
   }
+
+  static HighlightTheme defaultLightTheme(){
+    return HighlightTheme(
+        bgColor: Colors.white,
+        operatorStyle: TextStyle(color: Colors.black),
+        commentStyle: TextStyle(color: Colors.black45,fontStyle: FontStyle.italic),
+        multilineCommentStyle: TextStyle(color: Colors.black45,fontStyle: FontStyle.italic),
+        specialCharacterStyle: TextStyle(color: Colors.orangeAccent)
+    );
+  }
 }
 
 class PyText extends StatelessWidget{
@@ -106,7 +116,7 @@ class PyText extends StatelessWidget{
       "sorted", "staticmethod", "str", "sum", "super", "tuple",
       "type", "vars", "zip", "__import__", "NotImplemented",
       "Ellipsis", "__debug__"];
-    var operators = ['+','-','*','/','%','^','&','|','~','=','<','>','**','<=','>=','+=','-=','*=','/=','%=','**='];
+    var operators = ['+','-','*','/','//','%','^','&','|','~','=','<','>','>>','<<','**','!=','<=','>=','+=','-=','*=','==','/=','//=','%=','|=','&=','^=','>>=','<<=','**='];
     var re = new RegExp(r'\w+');
     if(re.stringMatch(token) == token){
       if (keywords.contains(token)) {
@@ -141,7 +151,7 @@ class PyText extends StatelessWidget{
       text = text.replaceFirst(i.group(0), '`');
       lst.add(i.group(0));
     });
-    var  re = new RegExp(r'(`)|([^`%\+\=\-\*/\&\^\|~\w])+|((\w)+)|[\s%\+\=\-\*/\&\^\|~]+');
+    var  re = new RegExp(r'(`)|([^`!%\+\=\-\*/\&\^\|~\w])+|((\w)+)|[\s!%\+\=\-\*/\&\^\|~]+');
     int j=0;
     var lastToken = '';
     re.allMatches(text).forEach((i) {
@@ -157,6 +167,7 @@ class PyText extends StatelessWidget{
         spans.add(TextSpan(text: i.group(0), style: getTextStyle(i.group(0))));
       }
       lastToken = i.group(0);
+      // print(i.group(0));
     });
     return  spans;
   }
