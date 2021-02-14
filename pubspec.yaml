@@ -1,7 +1,6 @@
 name: py_text_beta
 description: Python Richtext.
 version: 0.0.2
-author: Shashank Rajput<shashanktheboss777@gmail.com>
 homepage: https://github.com/ssrajputtheboss/py_text_beta.git
 
 environment:
