@@ -4,7 +4,6 @@ Python Richtext. This is just a test version , a better and upgraded version of 
 
 ## Usage:- 
 
-
 ```dart
 PyText('''
 for i in range(10):
