@@ -1,6 +1,7 @@
 name: py_text_beta
 description: A Python Richtext which automatically decorates the input text. This is a test version and supports only python upcoming version of this package will support many languages.
 version: 0.0.3
+author: Shashank Rajput
 homepage: https://github.com/ssrajputtheboss/py_text_beta.git
 
 environment:
