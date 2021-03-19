@@ -1,6 +1,6 @@
 # py_text_beta
 
-Python Richtext. This is just a test version , a better and upgraded version of this package i will upload later.
+Python Richtext. This is just a test version , upgraded version is [here](https://github.com/ssrajputtheboss/text_highlight).
 
 ## Usage:- 
 
